@@ -27,7 +27,7 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename) {
 var A = mongoose.model('Scans');
 
 
-app.get('/api/scanner', function(req, res) {
+app.get('/api/getScans', function(req, res) {
   // console.log(req.query.start);
   // console.log(req.query.end);
   if (req.query.start != undefined) {
@@ -46,6 +46,10 @@ app.get('/api/scanner', function(req, res) {
   }
 
 });
+
+//API
+// Routes
+app.use('/api', require('./routes/api'));
 
 
 // Start server
